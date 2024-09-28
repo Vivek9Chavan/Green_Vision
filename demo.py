@@ -490,7 +490,7 @@ class SLIC_project:
             avg_B = np.mean(B[superpixel_mask])
 
             # Define "whiter" regions as areas where all RGB channels are high
-            if avg_R > 180 and avg_G > 180 and avg_B > 180:
+            if avg_R > 160 and avg_G > 160 and avg_B > 160:
                 y_coords, x_coords = np.where(superpixel_mask)
                 x_min, x_max = x_coords.min(), x_coords.max()
                 y_min, y_max = y_coords.min(), y_coords.max()
@@ -685,7 +685,7 @@ if __name__ == "__main__":
     # HuggingChat Login for LLM
     def llm_response(csv_file_path):
         # Log in using your credentials
-        sign = Login("vivek.chavan@rwth-aachen.de", "temp_AI_hackathon123")
+        sign = Login("email", "password")
         cookies = sign.login()
         sign.saveCookiesToDir()
 
